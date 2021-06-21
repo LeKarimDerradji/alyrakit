@@ -1,3 +1,4 @@
+import {Container, SimpleGrid } from "@chakra-ui/react"
 import docs from "../assets/docs.svg"
 import coffee from "../assets/coffee.svg"
 import screen from "../assets/screen.svg"
@@ -22,11 +23,13 @@ const Features = () => {
     },
   ]
   return (
-    <section>
+    <Container as='section' maxW='container.lg' py={10}>
+      <SimpleGrid columns={[1, null, 3]} spacing={3}>
       {features.map((el, index) => {
         return <Feature key={index} {...el}></Feature>
       })}
-    </section>
+      </SimpleGrid>
+    </Container>
   )
 }
 
